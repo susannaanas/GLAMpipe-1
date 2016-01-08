@@ -56,8 +56,10 @@
 			 whatever format you need. Done!</p>
 			 
 			 <h3>Documented workflow</h3>
-			<p>The very point of MetaPipe is that it can be used for manipulation but that it -at the same time - documents what you have done with your data. 
+			<p>The very point of MetaPipe is that it can be used for manipulation but that it - at the same time - documents what you have done with your data. 
 			This documentation can be then shared, so that others does not have reinvent the same workflow.</p>
+			<p>Documentation is saved to a MetaPipe file. By sharing this file, you can show exactly how you edited data. 
+			Others can then "fork" your project and use it as a starting point for their conversion of similar data.</p>
 			
 			<h2>Nodes</h2>
 			<p>List of node types</p>
@@ -74,20 +76,25 @@
 				authors, you can use cluster.</p>
 				<li>Lookup</li>
 				<p>Lookup node can be used for combining data from different sources. 
-				Source can be a collection in Metapipe or a web resource. </p>
+				Source can be a collection in Metapipe or a web resource like Wikidata or VIAF.org </p>
 				<li>Map</li>
 				<p>With map node you can rename and combine your fields. </p>
 				<li>Export</li>
 				<p>Export node transforms your data to a certain format. Usually there is a map node before export node.</p>
 			</ul>
-			<p>Basically all nodes are just javascript functions.</p>
+			<p>Basically all nodes are just javascript functions. New nodes can be created easily.</p>
 
 			<p><img src="images/nodes3.png"/></p>
 			
-			<h3>Technology</h3>
+			<h2>Technology</h2>
 			<p>Metapipe is a <a href="https://nodejs.org/en/" target="_blank">node.js</a> application and it 
-			uses MongoDB for data storage. It can be run locally (see installation) or it can be used as a 
+			uses MongoDB for data storage (without MongoDB this would be a really pain in the **s). It can be run locally (see installation) or it can be used as a 
 			web service.</p>
+			<h3>But it really isn't a pipe, isn't it?</h3>
+			<p>Well, MetaPipe is really not a pipe or a dataflow tool (i.e. data flowing from one node to next). 
+			Instead, MetaPipe nodes are run once and result is saved to the database and after that next node can be run. 
+			The reason for this is the importance of ability to hand edit data in any phase. That would be very difficult
+			task in dataflow-based application. </p>
 
 		</section>
 
