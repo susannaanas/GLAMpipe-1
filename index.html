@@ -19,7 +19,7 @@
   <body>
 	<header>
 	  <div class="inner">
-		<h1>Metapipe</h1>
+		<h1>MetaPipe</h1>
 		<h2>2*node-based metadata processing tool</h2>
 		<a href="https://github.com/artturimatias/metapipe" class="button"><small>View project on</small> GitHub</a>
 	  </div>
@@ -28,25 +28,57 @@
 	<div id="content-wrapper">
 	  <div class="inner clearfix">
 		<section id="main-content">
+			<p>This is a very new project. Things are changing and different routes are followed. However, this page tries
+			 to show the main ideas. Any feedback is wellcome (ari.hayrinen@gmail.com).</p>
 			<h1>Purpose</h1>
-			<p>The main purpose of Metapipe is to provide method for (meta)data manipulation and conversion. 
-			A typical use case would be importing free images from Flickr to Wikimedia Commons, for example.</p>
+			<p>The main purpose of Metapipe is to provide method for data manipulation and conversion, both scripted and manual ways. </p>
+			<p>Metapipe uses nodes for graphical user interface. With nodes it is possible to make "easy to 
+			follow" structure for all editing that is needed for a dataset.</p>
 			
 			<h2>How it works?</h2>
-			<p>Metapipe uses nodes for graphical user interface. With nodes it is possible to make easy to 
-			follow structure for all editing that is needed for a dataset.</p>
-			<p>There are different types of nodes.</p>
+
+			<h3>Basic work flow</h3>
+			<p>Let's say you have a Excel-sheet of data. You then export it to a .csv -format. Next you import it to MetaPipe. 
+			There you can view your data again in sheet format.</p>
+			
+			<p>Then you start editing. Let's say you have an author field with multiple person names in it. 
+			You can add a Transform node called Split, which splits values. Note that you do not edit the original data,
+			 but Split creates a new field. You can view the result and <strong>edit it manuallly</strong> if necessary.</p>
+			 
+			 <p>Next you want to list all your authors. You create a Cluster node that used the field that you 
+			 just created with Split. This create a new collection (or table if you wish) that holds all unique 
+			 author names from your data.</p>
+			 
+			 <p>Now, if your data is intended for wikidata or commons, then it would be nice to have identifiers for persons.
+			 You can add a Wikidata lookup node. With that you can search wikidata with your author collection. Lookup results
+			 are saved to to your author collection.</p>
+			 <p>Finally, you can use (Filter?, Transform?) to create a new field with author name and wikidata link. Then you export 
+			 whatever format you need. Done!</p>
+			 
+			 <h3>Documented workflow</h3>
+			<p>The very point of MetaPipe is that it can be used for manipulation but that it -at the same time - documents what you have done with your data. 
+			This documentation can be then shared, so that others does not have reinvent the same workflow.</p>
 			
 			<h2>Nodes</h2>
 			<p>List of node types</p>
 			<ul>
 				<li>Source</li>
-				<p>explasdfa</p>
+				<p>With source node you can import your data to metapipe. 
+				Your data can be in file (xml, csv, tsv or json) or data can be imported from API.</p>
 				<li>Transform</li>
+				<p>Transform node is used to modifying fields in your data. 
+				Typical modifications are trimming spaces, splitting values, changing case and so on.</p>
 				<li>Cluster</li>
+				<p>Cluster node allows you to create a new collection from unique values of certain fields.
+				For example, if you have an author field in your and you would like to have a list of all 
+				authors, you can use cluster.</p>
 				<li>Lookup</li>
+				<p>Lookup node can be used for combining data from different sources. 
+				Source can be a collection in Metapipe or a web resource. </p>
 				<li>Map</li>
+				<p>With map node you can rename and combine your fields. </p>
 				<li>Export</li>
+				<p>Export node transforms your data to a certain format. Usually there is a map node before export node.</p>
 			</ul>
 			<p>Basically all nodes are just javascript functions.</p>
 
