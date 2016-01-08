@@ -28,25 +28,29 @@
 	<div id="content-wrapper">
 	  <div class="inner clearfix">
 		<section id="main-content">
-			<p>This is a very new project. Things are changing and different routes are followed. However, this page tries
-			 to show the main ideas. Any feedback is welcome (ari.hayrinen@gmail.com).</p>
+			<p>This is a very new project by Wikimedia Finland and no code is yet available. Things are changing and different routes are 
+			followed. However, this page tries
+			 to show the main ideas. Any feedback is welcome (ari.hayrinen@gmail.com). </p>
 			<h1>Purpose</h1>
-			<p>The main purpose of Metapipe is to provide method for data manipulation and conversion, both scripted and manual ways. </p>
-			<p>Metapipe uses nodes for graphical user interface. With nodes it is possible to make "easy to 
+			<p>The main purpose of Metapipe is to provide method for data manipulation and conversion, 
+			both scripted and manual ways. </p>
+			
+			<p>Metapipe uses <strong>nodes</strong> for graphical user interface. With nodes it is possible to make "easy to 
 			follow" structure for all editing that is needed for a dataset.</p>
+			<p>Projects can be <strong>shared</strong>, so that users can examine and adapt each others workflow and code.</p>
 			
 			
 			<h2>How it works?</h2>
 
 			<h3>Basic work flow</h3>
-			<p>Let's say you have a Excel-sheet of data. You then export it to a .csv -format. Next you import it to MetaPipe. 
+			<p>Let's say you have a Excel-sheet of data. You then export it to csv format. Next you import it to MetaPipe. 
 			There you can view your data again in sheet format.</p>
 			
-			<p>Then you start editing. Let's say you have an author field with multiple person names in it. 
+			<p>Then you can start editing. Let's say you have an author field with multiple person names in it. 
 			You can add a Transform node called Split, which splits values. Note that you do not edit the original data,
 			 but Split creates a new field. You can view the result and <strong>edit it manuallly</strong> if necessary.</p>
 			 
-			 <p>Next you want to list all your authors. You create a Cluster node that used the field that you 
+			 <p>Next you want to list all your authors. You create a Cluster node that uses the field that you 
 			 just created with Split. This create a new collection (or table if you wish) that holds all unique 
 			 author names from your data.</p>
 			 
@@ -57,7 +61,8 @@
 			 whatever format you need. Done!</p>
 			 
 			 <h3>Documented workflow</h3>
-			<p>The very point of MetaPipe is that it can be used for manipulation but that it - at the same time - documents what you have done with your data. 
+			<p>The very point of MetaPipe is that it can be used for manipulation but that it - at the same time - 
+			documents what you have done with your data. 
 			This documentation can be then shared, so that others does not have reinvent the same workflow.</p>
 			<p>Documentation is saved to a MetaPipe file. By sharing this file, you can show exactly how you edited data. 
 			Others can then "fork" your project and use it as a starting point for their conversion of similar data.</p>
@@ -81,11 +86,12 @@
 				<li>Map</li>
 				<p>With map node you can rename and combine your fields. </p>
 				<li>Export</li>
-				<p>Export node transforms your data to a certain format. Usually there is a map node before export node.</p>
+				<p>Export node transforms data to a certain format, like XML or JSON. Usually there is a map node before export node.</p>
 			</ul>
 			<h3>Node structure</h3>
-			<p>Basically all nodes are just javascript functions that are applied for each document. </p>
-			<p>Node has also view, that defines how data is displayed.</p>
+			<p>Basically all nodes are just javascript functions that are applied for each document. User can edit function.</p>
+			<p>Node has also a view that defines how data is displayed. User can edit view and user 
+			can edit data displayed by the view.</p>
 		
 
 			<p><img src="images/nodes3.png"/></p>
