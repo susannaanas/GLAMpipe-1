@@ -68,7 +68,22 @@
 			Others can then "fork" your project and use it as a starting point for their conversion of similar data.</p>
 			
 			<h2>Nodes</h2>
-			<p>List of node types</p>
+			<p>Node has two main parts: function, that defines what that node does, and view that defines how data is displayed
+			 and (possibly) manipulated.</p>
+			 
+			<h3>Node function</h3>
+			<p>Basically all nodes are just javascript functions that are applied for each document. Every node has their 
+			own function.</p>
+			
+			<h3>Node view</h3>
+			<p>Node has also a view that defines how data is displayed. View is a html page which can include javascript
+			 and therefore it can interact with MetaPipe. This means that you can build a view that allows interactive data
+			 editing. </p>
+			 
+			 <h3>Node settings</h3>
+			 <p>Every node type has a settings, where one can defined node specific parameters when creating the node. </p>
+			 
+			<h3>List of node types</h3>
 			<ul>
 				<li>Source</li>
 				<p>With source node you can import your data to metapipe. 
@@ -88,11 +103,6 @@
 				<li>Export</li>
 				<p>Export node transforms data to a certain format, like XML or JSON. Usually there is a map node before export node.</p>
 			</ul>
-			<h3>Node structure</h3>
-			<p>Basically all nodes are just javascript functions that are applied for each document. User can edit function.</p>
-			<p>Node has also a view that defines how data is displayed. User can edit view and user 
-			can edit data displayed by the view.</p>
-		
 
 			<p><img src="images/nodes3.png"/></p>
 			
@@ -105,6 +115,8 @@
 			Instead, MetaPipe nodes are run once and result is saved to the database and after that next node can be run. 
 			The reason for this is the importance of ability to hand edit data in any phase. That would be very difficult
 			task in dataflow-based application. </p>
+
+
 
 		</section>
 
