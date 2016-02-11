@@ -28,9 +28,10 @@
 	<div id="content-wrapper">
 	  <div class="inner clearfix">
 		<section id="main-content">
-			<p>This is a very new project by Wikimedia Finland and no code is yet available. Things are changing and different routes are 
+			<p>This is a very new project by <a href="https://meta.wikimedia.org/wiki/Wikimedia_Suomi" target="_blank">Wikimedia Finland</a> <span style="text-decoration: line-through;">and no code is yet available</span>. Things are changing and different routes are 
 			followed. However, this page tries
 			 to show the main ideas. Any feedback is welcome (ari.hayrinen@gmail.com). </p>
+			 <p>The project is funded by Finnish Ministry of Education adn Culture.</p>
 			<h1>Purpose</h1>
 			<p>The main purpose of Metapipe is to provide method for data manipulation and conversion, 
 			both scripted and manual ways. </p>
@@ -71,26 +72,29 @@
 			<p>Node has two main parts: function, that defines what that node does, and view that defines how data is displayed
 			 and (possibly) manipulated.</p>
 			 
-			<h3>Node function</h3>
-			<p>Basically all nodes are just javascript functions that are applied for each document. Every node has their 
-			own function.</p>
+			<h3>Node scripts</h3>
+			<p>Nodes can have several scripts that are executed when node is run. Let's say that node's functionality is to split string in certain field to pieces. The "run" script is then executed per record and script must set out.value that is then saved to database by MetaPipe.</p>
 			
-			<h3>Node view</h3>
-			<p>Node has also a view that defines how data is displayed. View is a html page which can include javascript
+			<h3>Node views</h3>
+			<p>Node has also views that define how data is displayed. View is a html page + <a href="http://knockoutjs.com/" target="_blank">knockout.js</a> which can include javascript
 			 and therefore it can interact with MetaPipe. This means that you can build a view that allows interactive data
 			 editing. </p>
 			 
+			 <h3>Node parameter</h3>
+			 <p>Every node has parameters that are given when node is created. These can not be changed later.  </p>
+
 			 <h3>Node settings</h3>
-			 <p>Every node type has a settings, where one can defined node specific parameters when creating the node. </p>
+			 <p>Node can also have runtime settings. For example, split node has a separator setting. </p>
 			 
+
 			<h3>List of node types</h3>
 			<ul>
 				<li>Source</li>
 				<p>With source node you can import your data to metapipe. 
 				Your data can be in file (xml, csv, tsv or json) or data can be imported from API.</p>
 				<li>Transform</li>
-				<p>Transform node is used to modifying fields in your data. 
-				Typical modifications are trimming spaces, splitting values, changing case and so on.</p>
+				<p>Transform node is used to modifying fields or files (like images) in your data. 
+				Typical modifications are trimming spaces, splitting values, changing case, thumbnailing images and so on.</p>
 				<li>Cluster</li>
 				<p>Cluster node allows you to create a new collection from unique values of certain fields.
 				For example, if you have an author field in your and you would like to have a list of all 
@@ -100,6 +104,10 @@
 				Source can be a collection in Metapipe or a web resource like Wikidata or VIAF.org </p>
 				<li>Map</li>
 				<p>With map node you can rename and combine your fields. </p>
+				<li>Download</li>
+				<p>Download nodes can download images from different services like Flickr, for example.</p>
+				<li>Upload</li>
+				<p>Upload nodes can push data and files to different services.</p>
 				<li>Export</li>
 				<p>Export node transforms data to a certain format, like XML or JSON. Usually there is a map node before export node.</p>
 			</ul>
@@ -108,8 +116,8 @@
 			
 			<h2>Technology</h2>
 			<p>Metapipe is a <a href="https://nodejs.org/en/" target="_blank">node.js</a> application and it 
-			uses MongoDB for data storage (without MongoDB this would be a really pain in the **s). It can be run locally (see installation) or it can be used as a 
-			web service.</p>
+			uses MongoDB for data storage (without MongoDB this would be a really pain in the **s). It can be run locally (see installation) or it can be (possible) used as a web service.
+			</p>
 			<h3>But it really isn't a pipe, isn't it?</h3>
 			<p>Well, MetaPipe is really not a pipe or a dataflow tool (i.e. data flowing from one node to next). 
 			Instead, MetaPipe nodes are run once and result is saved to the database and after that next node can be run. 
