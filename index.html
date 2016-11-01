@@ -33,9 +33,9 @@
 			 to show the main ideas. Any feedback is welcome (ari.hayrinen@gmail.com). </p>
 			 <p>The project is mainly funded by <a target="_blank" href="http://www.minedu.fi/OPM/?lang=en">Finnish Ministry of Education and Culture</a> and partly by WMF via <a target="_blank" href="https://meta.wikimedia.org/wiki/Grants:IEG/Wikimaps_Warper_2.0">Wikimaps Warper 2.0 project</a>.</p>
 			 
-			<figure>
-				<img height="374px" width="600px" src="images/flickr_project_2_small.png"/></p>
-				<figcaption>Node set for downloading images from Flickr.</figcaption>
+			<figure >
+				<a href="images/ui2.png"><img style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);" height="374px" width="600px" src="images/ui2.png"/></a>
+				<figcaption>GLAMpipe in action.</figcaption>
 			</figure>
 
 			<h1>Purpose</h1>
@@ -60,7 +60,7 @@
 			You can add a Transform node called Split, which splits values. Note that you do not edit the original data,
 			 but Split creates a new field. You can view the result and <strong>edit it manuallly</strong> if necessary.</p>
 			 
-			 <p>Next you want to list all your authors. You create a Cluster node that uses the field that you 
+			 <p>Next you want to list all your authors. You create a Group node that uses the field that you 
 			 just created with Split. This create a new collection (or table if you wish) that holds all unique 
 			 author names from your data.</p>
 			 
@@ -100,11 +100,11 @@
 			<ul>
 				<li>Source</li>
 				<p>With source node you can import your data to metapipe. 
-				Your data can be in file (xml, csv, tsv or json) or data can be imported from API.</p>
-				<li>Transform</li>
+				Your data can be in file (currently only csv) or data can be imported from API.</p>
+				<li>Process</li>
 				<p>Transform node is used to modifying fields or files (like images) in your data. 
 				Typical modifications are trimming spaces, splitting values, changing case, thumbnailing images and so on.</p>
-				<li>Cluster</li>
+				<li>Group</li>
 				<p>Cluster node allows you to create a new collection from unique values of certain fields.
 				For example, if you have an author field in your and you would like to have a list of all 
 				authors, you can use cluster.</p>
@@ -115,10 +115,8 @@
 				<p>With map node you can rename and combine your fields. </p>
 				<li>Download</li>
 				<p>Download nodes can download images from different services like Flickr, for example.</p>
-				<li>Upload</li>
-				<p>Upload nodes can push data and files to different services.</p>
 				<li>Export</li>
-				<p>Export node transforms data to a certain format, like XML or JSON. </p>
+				<p>Export node exports data to file (CSV, XML) or API.</p>
 			</ul>
 
 			
