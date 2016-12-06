@@ -339,6 +339,8 @@ exports.getNodeFromFile = function (node_id, res) {
  * - this is THE MAIN SWITCH of GLAMpipe
  */ 
 exports.runNode = function (req, io, res) {
+	
+	res.send(null);
 
 	console.log('Running node:', req.params.id);
 	io.sockets.emit("news", "NODE: running node " + req.params.id);

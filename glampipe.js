@@ -68,6 +68,7 @@ var GlamPipe = function() {
 		console.log("initializing server");
 
 		self.app = express();
+		self.app.set('json spaces', 2); // pretty print all json responses
 		self.app.use(express.static('public'));
 		self.app.use( bodyParser.json() );       // to support JSON-encoded bodies
 		self.app.use(bodyParser.urlencoded({     // to support URL-encoded bodies

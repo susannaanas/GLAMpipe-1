@@ -76,48 +76,38 @@ module.exports = function(express, glampipe, passport) {
 	});
 
 
-
-
-    
-
-	// PROJECTS
+	// MAIN
 	express.get('/', function (req, res) {
 		res.sendFile(path.join(__dirname, 'views', 'index.html'));
 	});
+    
 
-	express.get('/setup', function (req, res) {
-		glampipe.core.sendErrorPage(res, glampipe.initError);
-	});
-
-	express.get('/template/:file', function (req, res) {
-		res.sendFile(path.join(__dirname, 'templates', 'test.html'));
-	});
-
-	express.get('/project/:id', function (req, res) {
+	// PROJECTS
+	express.get('/projects/:id', function (req, res) {
 		res.sendFile(path.join(__dirname, 'views', 'project.html'));
 	});
-
-	express.post('/create/project', function (req, res) {
-		glampipe.core.createProject(req.body.title, res);
-	});
-
-	express.post('/run/project/:id', function (req, res) {
-		glampipe.core.runProject(req, glampipe, res);
-	});
-
-	express.get('/get/project/titles', function (req, res) {
-		glampipe.core.getProjectTitles(res);
-	});
-
-	express.get('/get/projects', function (req, res) {
+	
+	express.get('/api/v1/projects', function (req, res) {
 		glampipe.core.getProjects(res);
 	});
 
-	express.get('/get/project/:id', function (req, res) {
+	express.get('/api/v1/project/titles', function (req, res) {
+		glampipe.core.getProjectTitles(res);
+	});
+
+	express.post('/api/v1/projects', function (req, res) {
+		glampipe.core.createProject(req.body.title, res);
+	});
+
+	express.post('/api/v1/projects/:id/run', function (req, res) {
+		glampipe.core.runProject(req, glampipe, res);
+	});
+
+	express.get('/api/v1/projects/:id', function (req, res) {
 		glampipe.core.getProject(req.params.id, res);
 	});
 
-	express.post('/delete/project/:id', function (req, res) {
+	express.delete('/api/v1/projects/:id', function (req, res) {
 		glampipe.core.deleteProject(req.params.id, res);
 	});
 
@@ -247,6 +237,16 @@ module.exports = function(express, glampipe, passport) {
 
 	express.post('/proxy/', function (req, res) {
 		proxy.proxyJSON(req.body.url, req.body.query, res);
+	});
+ 
+	// SETUP
+	express.get('/setup', function (req, res) {
+		glampipe.core.sendErrorPage(res, glampipe.initError);
+	});
+
+	// MISC
+	express.get('/template/:file', function (req, res) {
+		res.sendFile(path.join(__dirname, 'templates', 'test.html'));
 	});
     
 }

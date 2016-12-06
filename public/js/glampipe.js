@@ -23,7 +23,7 @@ var glamPipe = function () {
 
 	// MAIN PAGE (projects)
 	this.getProjects = function (div) {
-		$.getJSON("/get/project/titles", function(data) { 
+		$.getJSON("/api/v1/projects", function(data) { 
 			$(div).empty();
 			data.sort(compare);
 			for(var i = 0; i< data.length; i++) {
