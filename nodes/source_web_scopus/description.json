@@ -1,0 +1,20 @@
+{
+    "nodeid": "source_web_scopus",
+    "type": "source",
+    "subtype": "web",
+    "title": "Scopus API search",
+    "status": "rubbish",
+    "usage":"",
+    "description": "Import metadata from Scopus API",
+    
+    "scripts": {
+        "hello": "out.say('news', 'You added a Scopus import node'); ",
+        "bye": "out.say('finish', 'Bye!'); ",
+        "finish":"out.say('finish', 'Fetched ' + context.vars.record_counter + ' records!'); "
+    },
+    "views": {
+        "default_keys": ["name", "handle"]
+    
+    }
+  
+}

@@ -78,7 +78,7 @@ function requestLoop(node, sandbox, io, cb) {
 
 			callAPI(sandbox.out.url, function(error, response, body) {
 				if(error) {
-					//sandbox.out.say("error", error);
+					sandbox.out.say("error", error);
 				} else {
 					sandbox.context.error = error;
 					sandbox.context.response = response;
@@ -86,7 +86,7 @@ function requestLoop(node, sandbox, io, cb) {
 					sandbox.out.url = "";
 					sandbox.out.schema = [];
 					nodescript.runNodeScriptInContext("run", node, sandbox, io);
-					//console.log("insert array:", sandbox.out.value.length);
+					console.log("insert array:", sandbox.out.value.length);
 					//console.log("SCHEMA:", sandbox.out.schema);
 					//console.log("COLLECTIONS:", sandbox.context.vars.collections);
 					mongoquery.update("mp_projects", {_id:node.project}, {$addToSet:{"schemas": {"keys": sandbox.out.schema, "types": sandbox.out.key_type, "collection":node.collection}}}, function (error) {
@@ -132,7 +132,6 @@ function requestLoop(node, sandbox, io, cb) {
 		if (sandbox.out.url != "") {
 			requestLoop(node, sandbox, io, cb)
 		} else {
-			
 			if(cb)
 				cb();
 			else {
