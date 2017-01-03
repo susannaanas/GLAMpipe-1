@@ -13,13 +13,13 @@ function split (val) {
 			}
 		}
 	   
-	} else {  
+	} else if (val) {  
 
 		// split by linebreaks or by character(s)
 		if(context.node.settings.linebreaks)
-			var result = val.split(/\r?\n/);
+			result = val.split(/\r?\n/);
 		else
-			var result = val.split(context.node.settings.separator);
+			result = val.split(context.node.settings.separator);
 
 		// remove empty lines if "skip empty" is set
 		if(context.node.settings.skip_empty) 

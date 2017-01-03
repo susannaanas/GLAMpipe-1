@@ -3,7 +3,7 @@ var get = context.get;
 var doc = context.doc; 
 var settings = context.node.settings; 
 
-
+// if field is "dotted" (like author.authaname), then we use the first part as a field name
 if(settings.field1.indexOf(".") !== -1) {
 	var s = settings.field1.split(".");
 	var field1_value = doc[s[0]];
@@ -11,11 +11,16 @@ if(settings.field1.indexOf(".") !== -1) {
 	var field1_value = doc[settings.field1];
 }
 
-var field2_value = doc["link"];
+if(settings.field2.indexOf(".") !== -1) {
+	var s = settings.field2.split(".");
+	var field2_value = doc[s[0]];
+} else {
+	var field2_value = doc[settings.field2];
+}
 
 var arr = []; 
 
-// if both are arrays
+// if both are arrays, then pair them -> field1_value[0] + field2_value[0] etc.
 if(Array.isArray(field1_value) && Array.isArray(field2_value)) {
 	var max = Math.max(field1_value.length, field2_value.length);
 	for(var i = 0; i < max; i++) {

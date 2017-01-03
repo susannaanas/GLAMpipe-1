@@ -63,7 +63,7 @@ exports.runNode = function (node, io) {
 						case "csv":
 							var downloader = require("../app/node_runners/download-file.js");
 							var csv = require("../app/node_runners/source-file-csv.js");
-							pre_run.runInContext(sandbox); // ask url and user auth from node
+							sandbox.pre_run.runInContext(sandbox); // ask url and user auth from node
 							var download = sandbox.out.urls[0]; // we have only one download
 							downloader.downloadAndSave (node, download, function() {
 								console.log(download.response.statusCode);
