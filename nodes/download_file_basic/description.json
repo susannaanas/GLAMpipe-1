@@ -4,7 +4,7 @@
     "subtype": "basic",
     "title": "file",
     "status": "usable",
-    "description": "Download file from URL.",
+    "description": "Download a file from URL.",
 
 
     "scripts": {
@@ -14,7 +14,7 @@
 			"context.node.out_field = context.node.params.in_field + context.node.params.out_suffix; "
 		],
         
-        "bye": "out.say('news', 'Deleted donwload node. Downloaded files will remain. Bye!'); ",
+        "bye": "out.say('news', 'Deleted a donwload node. Downloaded files will remain. Bye!'); ",
         
         "init":
         [
@@ -31,7 +31,7 @@
     "views": {
                     
         "settings": [
-                    "<label>Dry run (does not download, just shows the file names)</label>",
+                    "<label>File listing. Files are not downloaded, only listed.</label>",
 					"<input class='node-settings' type='checkbox' name='dry_run' checked='checked' />"
                     ]
     }
