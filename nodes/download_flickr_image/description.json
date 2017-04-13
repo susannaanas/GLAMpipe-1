@@ -4,7 +4,7 @@
     "subtype": "Flickr",
     "title": "Download Flickr images",
     "status": "works",
-    "description": "Downloads images in any size from Flickr URL. You will need to use the Flickr getSizes node.",
+    "description": "Downloads images in any size from a Flickr URL. You will need to use the Flickr getSizes node.",
 
 
     "scripts": {
@@ -20,7 +20,7 @@
         
         "init":
         [
-            "out.say('progress', 'I have ' + context.doc_count + ' images to download!'); "
+            "out.say('progress', context.doc_count + ' images to download!'); "
         ],
 
         "pre_run": 
