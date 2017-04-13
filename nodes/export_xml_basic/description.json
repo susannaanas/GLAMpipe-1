@@ -4,11 +4,11 @@
     "subtype": "file",
     "title": "XML",
     "status": "broken",
-    "description": "Export collection as XML file. Very simple version. Do not export objects.",
+    "description": "Export a dataset as an XML file. A very simple version. Does not export objects.",
 
 
     "scripts": {
-        "hello": "out.say('news', 'You added a XML export node'); context.node.title = context.node.params.file; ",
+        "hello": "out.say('news', 'You added an XML export node'); context.node.title = context.node.params.file; ",
         "bye": "out.say('news', 'Deleted XML export node. Bye!'); ",
         "init":"out.value = '<root>\\n';",
         
