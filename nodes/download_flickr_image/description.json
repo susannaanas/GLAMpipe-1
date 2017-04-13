@@ -2,7 +2,7 @@
     "nodeid": "download_flickr_image",
     "type": "download",
     "subtype": "Flickr",
-    "title": "Download images of all sizes",
+    "title": "Download Flickr images",
     "status": "works",
     "description": "Downloads images in any size from Flickr URL. You will need to use the Flickr getSizes node.",
 
