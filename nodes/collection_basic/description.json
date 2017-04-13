@@ -9,7 +9,7 @@
 	
 	"scripts": {
 		"hello": "out.say('news', 'You created a dataset'); context.node.title = context.node.params.title",
-        "bye": "out.say('finish', 'You deleted a dataset. Dataset ' + context.node.params.collection + ' is also deleted. Bye!'); ",
+        "bye": "out.say('finish', 'Deleted a dataset. Dataset ' + context.node.params.collection + ' is also deleted. Bye!'); ",
 		"finish":"out.say('finish', 'Dataset created'); "
 	},
 	
