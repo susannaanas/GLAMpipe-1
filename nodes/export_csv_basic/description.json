@@ -10,7 +10,7 @@
 
     "scripts": {
         "hello": "out.say('news', 'You added a CSV export node'); context.node.title = context.node.params.file; ",
-        "bye": "out.say('news', 'You deleted CSV export node. Bye!'); ",
+        "bye": "out.say('news', 'Deleted CSV export node. Bye!'); ",
         
         "finish":
         [
