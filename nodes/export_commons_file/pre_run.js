@@ -9,11 +9,11 @@ else
             
 /* if commons url is set, then skip that record */
 if(context.get(context.doc, context.node.params.out_field) != "" ) { 
-    out.say("progress", "skipping already uploaded file"); 
+    out.say("progress", "Skipping already uploaded file"); 
     context.skip = true; 
             
 } else if (file_check !== "0" || file_check !== 0) {
-    out.say("progress", "skipping existing file"); 
+    out.say("progress", "Skipping existing file"); 
     context.skip = true; 
     
 } else {
