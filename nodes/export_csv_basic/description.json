@@ -5,12 +5,12 @@
     "subsubtype": "csv",
     "title": "CSV",
     "status": "works",
-    "description": "Export a dataset as CSV file. Exports arrays but not objects.",
+    "description": "Export a data collection as CSV file. Exports arrays but not objects.",
 
 
     "scripts": {
         "hello": "out.say('news', 'You added a CSV export node'); context.node.title = context.node.params.file; ",
-        "bye": "out.say('news', 'Deleted CSV export node. Bye!'); ",
+        "bye": "out.say('news', 'Deleted a CSV export node. Bye!'); ",
         
         "finish":
         [
