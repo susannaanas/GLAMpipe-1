@@ -2,21 +2,21 @@
 	"nodeid": "collection_basic",
 	"type": "collection",
 	"subtype": "basic",
-	"title": "Dataset",
+	"title": "Data collection",
     "status": "usable",
 	"usage":"",
-	"description": "Create a new dataset",
+	"description": "Create a new data collection",
 	
 	"scripts": {
-		"hello": "out.say('news', 'You created a dataset'); context.node.title = context.node.params.title",
-        "bye": "out.say('finish', 'Deleted a dataset. Dataset ' + context.node.params.collection + ' is also deleted. Bye!'); ",
-		"finish":"out.say('finish', 'Dataset created'); "
+		"hello": "out.say('news', 'You created a data collection'); context.node.title = context.node.params.title",
+        "bye": "out.say('finish', 'Deleted a data collection. Data collection ' + context.node.params.collection + ' is also deleted. Bye!'); ",
+		"finish":"out.say('finish', 'Data collection created'); "
 	},
 	
 	"views": {
 		"params":
 		[
-			"<label>Dataset title </label><input type=\"text\" name=\"title\" id=\"title\" is required />",
+			"<label>Collection title </label><input type=\"text\" name=\"title\" id=\"title\" is required />",
 			"<label>Data description </label><textarea name=\"description\" id=\"description\" ></textarea>"
 		],
 		"settings":"No settings"
