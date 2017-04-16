@@ -11,5 +11,5 @@ var config = {
 out.botconfig = config;
             
 var apis = ["https://commons.wikimedia.org","https://commons.wikimedia.beta.wmflabs.org"]; 
-out.say("progress", "Trying to login to commons..."); 
+out.say("progress", "Trying to login to Wikimedia Commons..."); 
 out.url = apis[parseInt(context.node.settings.api)] +"/w/api.php?action=query&meta=tokens&type=login"; 
