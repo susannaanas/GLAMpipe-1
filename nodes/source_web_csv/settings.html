@@ -1,7 +1,7 @@
 
 <h3>Import settings</h3>
 <div class="box-noflex">
-	<label>separator</label>
+	<label>Separator</label>
 	<input class="node-settings short_input" name="separator" value=","/>
 
 	<label>Character encoding</label>
@@ -10,11 +10,11 @@
 		<option value="latin1">iso-8859-1 (latin1)</option>
 	</select>
 	
-	<div class="help">Import <b>destroys all your edits</b> and imports data from source while the update mode only adds those records from CSV that are not allready in the collection.</div>	
+	<div class="help">Import <b>overwrites all your previous edits</b> and imports data from the source CSV. The update mode adds only those records from the CSV that are not already in the collection.</div>	
 	<label>Mode</label>
 	<select class="node-settings short_input" name="mode">
-		<option selected="selected" value="update">Keep data and update based on update key</option>
-		<option value="import">Clear data and re-import</option>
+		<option selected="selected" value="update">Update - Keep previous data and update based on an update key</option>
+		<option value="import">Import - Clear previous data and re-import</option>
 	</select>
 	
 	<label>Update key</label>
@@ -23,10 +23,10 @@
 
 <h3>Authentication</h3>
 <div class="box-noflex">
-	<div class="help">If CSV is protected with basic authentication, then you can set credentials here.</div>
-	<label>username</label>
+	<div class="help">You can set credentials here, if the CSV is protected with basic authentication.</div>
+	<label>Username</label>
 	<input class="node-settings" name="username"/>
-	<label>password</label>
+	<label>Password</label>
 	<input class="node-settings" name="password" type="password"/>
 </div>
 
