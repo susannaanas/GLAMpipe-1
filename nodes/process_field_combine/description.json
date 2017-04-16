@@ -4,7 +4,7 @@
 	"type": "process",
 	"subtype": "fields",
     "status": "usable",
-	"description": "Combine string fields with arbitrary strings",
+	"description": "Combine strings from fields",
 	"scripts": {
 		"hello":
 		[
@@ -13,7 +13,7 @@
 			"context.node.out_field = context.node.params.out_field; "
 		],
 		
-        "bye": "out.say('news', 'Deleted combine node. Bye!'); ",
+        "bye": "out.say('news', 'Deleted a combine node. Bye!'); ",
         
         "init":
         [
