@@ -323,10 +323,11 @@ a .listoption:hover {
 	margin: 0px;
 }
 
-
+.settingscontainer {
+	background-color: rgba(255,255,255,0.5);
+}
 
 .settingsheader {
-	background-color: rgba(255,255,255,0.5);
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
@@ -338,6 +339,15 @@ a .listoption:hover {
 
 .settingstitle {
 	font-size: 14px;
+}
+
+.settings {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+   	flex-direction: column;
+	display: flex;
+	padding: 0px 20px;
 }
 
 .dataheader {
