@@ -4,7 +4,7 @@
     "subtype": "basic",
     "title": "file",
     "status": "usable",
-    "description": "Download a file from URL.",
+    "description": "Download a file from a URL",
 
 
     "scripts": {
@@ -14,7 +14,7 @@
 			"context.node.out_field = context.node.params.in_field + context.node.params.out_suffix; "
 		],
         
-        "bye": "out.say('news', 'Deleted a donwload node. Downloaded files will remain. Bye!'); ",
+        "bye": "out.say('news', 'Deleted a download node. Downloaded files will remain. Bye!'); ",
         
         "init":
         [
@@ -22,7 +22,7 @@
             "context.in_field = context.node.params.in_field; ",
             "    /* lets make counter for succesful downloads */",
             "context.node.download_counter = 0; ",
-            "out.say('progress', 'I have ' + context.doc_count + ' files to download!'); "
+            "out.say('progress', context.doc_count + ' files to download!'); "
         ],
                 
         "finish":"out.say('finish', '<h2>Downloaded '+context.node.download_counter+' files!</h2>');"
